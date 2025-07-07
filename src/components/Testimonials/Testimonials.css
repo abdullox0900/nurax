@@ -1,0 +1,15 @@
+.testimonials-card {
+    position: relative;
+}
+
+.testimonials-card::before {
+    content: '';
+    position: absolute;
+    top: 450px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/testimonials-bg.svg');
+    background-repeat: no-repeat;
+    z-index: 1;
+}

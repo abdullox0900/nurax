@@ -1,0 +1,17 @@
+.start-section-bg {
+    position: relative;
+    background: linear-gradient(160deg, #111116 0%, #13138b 100%);
+    z-index: 10;
+}
+
+.start-section-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/start-section-bg.svg');
+    background-size: cover;
+    z-index: -1;
+}

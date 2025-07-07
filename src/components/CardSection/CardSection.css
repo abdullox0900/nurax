@@ -1,0 +1,22 @@
+.card-section-bg {
+    background-image: url('../../assets/card-section-bg.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.card-item-hover-oval {
+    position: relative;
+    z-index: -1;
+}
+
+.card-item-hover-oval::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    z-index: -1;
+}

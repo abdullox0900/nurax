@@ -1,0 +1,15 @@
+.pricing-section {
+    position: relative;
+}
+
+.pricing-section::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -100px;
+    width: 272px;
+    height: 236px;
+    background-image: url('../../assets/price-card-bg.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
