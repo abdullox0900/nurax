@@ -10,7 +10,6 @@ interface ForgotPasswordModalProps {
 export default function ForgotPasswordModal({ onClose }: ForgotPasswordModalProps) {
     const [email, setEmail] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [isSubmitted, setIsSubmitted] = useState(false)
     const [isVisible, setIsVisible] = useState(false)
     const [error, setError] = useState('')
     const [touched, setTouched] = useState(false)
@@ -53,7 +52,6 @@ export default function ForgotPasswordModal({ onClose }: ForgotPasswordModalProp
         // Simulate API call
         setTimeout(() => {
             setIsSubmitting(false)
-            setIsSubmitted(true)
             // In a real app, you would send a request to your backend here
         }, 1000)
     }

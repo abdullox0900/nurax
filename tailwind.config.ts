@@ -16,6 +16,7 @@ const config: Config = {
 			screens: {
 				laptop: { max: '1440px' },
 				laptopMd: { max: '1280px' },
+				laptopSm: { max: '1095px' },
 				tablet: { max: '1024px' },
 				tabletMd: { max: '768px' },
 				tabletSm: { max: '550px' },

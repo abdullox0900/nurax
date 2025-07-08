@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer"
+import Footer from '@/components/Footer'
 import type { Metadata } from "next"
 import { ThemeProvider } from 'next-themes'
 import { Raleway } from "next/font/google"

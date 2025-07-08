@@ -1,11 +1,8 @@
 'use client'
 
-import { useTheme } from 'next-themes'
 import { LegalNavigation } from '../components'
 
 export default function UserAgreement() {
-    const { theme } = useTheme()
-
     return (
         <div className="min-h-screen flex flex-col">
             {/* Header */}

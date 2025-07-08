@@ -16,7 +16,7 @@ const CardSection = () => {
     const [activeCategory, setActiveCategory] = useState('Все задачи')
 
     // State for pagination
-    const [visibleCards, setVisibleCards] = useState(5)
+    const [visibleCards, setVisibleCards] = useState(10)
 
     // Filter cards based on active category
     const filteredCards = activeCategory === 'Все задачи'
@@ -33,34 +33,38 @@ const CardSection = () => {
 
     return (
         <div className="w-full pt-[120px] pb-[80px] card-section-bg">
-            <h2 className="text-[40px] leading-[112%] font-bold mb-[25px] text-center dark:text-white">
+            <h2 className="text-[40px] leading-[112%] font-bold mb-[25px] text-center dark:text-white tabletSm:text-[30px] tabletSm:mb-[15px]">
                 Изучите примеры использования
                 <br /> из <span className="text-blue-500">нашей официальной коллекции</span>
             </h2>
-            <p className="text-center mb-[50px] text-[15px] leading-[135%] dark:text-[#F9F9FA]">
+            <p className="text-center mb-[50px] text-[15px] leading-[135%] dark:text-[#F9F9FA] tabletSm:text-[13px] tabletSm:mb-[25px]">
                 Узнайте как Наши специалисты с различными заданиями с помощью пошаговых примеров
             </p>
 
             {/* Category filter */}
-            <div className="flex flex-wrap justify-center gap-[5px] mb-[50px]">
-                {categories.map((category) => (
-                    <button
-                        key={category}
-                        onClick={() => {
-                            setActiveCategory(category)
-                            setVisibleCards(5) // Reset visible cards when changing category
-                        }}
-                        className={`px-4 py-2 rounded-[11px] text-[15px] font-semibold leading-[135%] transition-all ${activeCategory === category
-                            ? 'bg-black text-white border border-transparent dark:bg-[#fff] dark:text-[#121414]'
-                            : 'bg-transparent border border-[rgba(131,144,167,0.2)] dark:bg-[#222429] text-[#121414] dark:text-[#fff] dark:border-[rgba(249,249,250,0.08)]'
-                            }`}
-                    >
-                        {category}
-                    </button>
-                ))}
+            <div className="w-full mb-[50px] tabletSm:mb-[30px]">
+                <div className="overflow-x-auto w-full">
+                    <div className="flex gap-[5px] pl-[20px] whitespace-nowrap min-w-max mx-auto justify-center pb-2">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => {
+                                    setActiveCategory(category)
+                                    setVisibleCards(5) // Reset visible cards when changing category
+                                }}
+                                className={`px-4 py-2 rounded-[11px] text-[15px] font-semibold leading-[135%] transition-all whitespace-nowrap ${activeCategory === category
+                                    ? 'bg-black text-white border border-transparent dark:bg-[#fff] dark:text-[#121414]'
+                                    : 'bg-transparent border border-[rgba(131,144,167,0.2)] dark:bg-[#222429] text-[#121414] dark:text-[#fff] dark:border-[rgba(249,249,250,0.08)]'
+                                    }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             </div>
 
-            <div className="grid grid-cols-5 gap-[15px]">
+            <div className="max-w-[1440px] px-4 mx-auto grid grid-cols-5 gap-[15px] laptop:grid-cols-4 laptopMd:grid-cols-3 tabletMd:grid-cols-2 tabletSm:grid-cols-1">
                 {currentCards.map((card) => (
                     <CardItem key={card.id} card={card} />
                 ))}
@@ -88,7 +92,7 @@ const CardItem = ({ card }: { card: Card }) => {
 
     return (
         <div
-            className="relative w-[276px] h-[315px] rounded-[20px] overflow-hidden border border-[rgba(131,144,167,0.2)] dark:bg-[#121414] dark:border-[rgba(249,249,250,0.08)] cursor-pointer "
+            className="relative w-[276px] h-[315px] rounded-[20px] overflow-hidden border border-[rgba(131,144,167,0.2)] dark:bg-[#121414] dark:border-[rgba(249,249,250,0.08)] cursor-pointer laptop:w-full"
             style={{
                 backgroundColor: card.hasImage ? theme === 'dark' ? '' : '' : theme === 'dark' ? '#222429' : '#F9F9F9',
                 padding: card.hasImage ? '10px 10px 25px' : '25px'
@@ -97,7 +101,7 @@ const CardItem = ({ card }: { card: Card }) => {
             onMouseLeave={() => setIsHovered(false)}
         >
             {card.hasImage && (
-                <div className="w-[256px] h-[155px] mb-[20px] rounded-[15px] overflow-hidden">
+                <div className="w-[256px] h-[155px] mb-[20px] rounded-[15px] overflow-hidden laptop:w-full">
                     <Image
                         src={card.image}
                         alt={card.title}

@@ -130,8 +130,8 @@ const Testimonials = () => {
 
     return (
         <section className="bg-white dark:bg-[#121414] flex flex-row justify-center w-full border-y border-[#F9F9FA] dark:border-[rgba(249,249,250,0.01)] testimonials-card">
-            <div className="overflow-hidden w-full h-[830px] relative">
-                <header className="flex flex-col w-[400px] items-start gap-[25px] absolute top-[171px] left-20">
+            <div className="container mx-auto overflow-hidden w-full h-[830px] relative">
+                <header className="flex flex-col w-[400px] items-start gap-[25px] absolute top-[171px]">
                     <h1 className="relative self-stretch mt-[-1.00px] font-bold text-[#121414] dark:text-white text-[40px] tracking-[0] leading-[44.8px]">
                         Отзывы из разных
                         <br />

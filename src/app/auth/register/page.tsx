@@ -1,6 +1,5 @@
 "use client"
 
-import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -15,7 +14,6 @@ export default function Register() {
     const [errors, setErrors] = useState({ email: '', password: '', confirmPassword: '' })
     const [touched, setTouched] = useState({ email: false, password: false, confirmPassword: false })
     const router = useRouter()
-    const { theme } = useTheme()
 
     const validateEmail = (email: string) => {
         if (!email) return 'Email is required'
