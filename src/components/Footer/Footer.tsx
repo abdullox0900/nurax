@@ -10,25 +10,25 @@ const Footer = () => {
     const { theme } = useTheme()
 
     return (
-        <footer className="w-full bg-white dark:bg-[#121414] border-t  dark:border-[rgba(249,249,250,0.10)] pt-[70px] pb-[80px]">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="flex justify-between items-start">
+        <footer className="w-full bg-white dark:bg-[#121414] border-t  dark:border-[rgba(249,249,250,0.10)] pt-[70px] pb-[80px] tabletSm:pt-[40px] tabletSm:pb-[20px]">
+            <div className="max-w-[1440px] mx-auto px-4 ">
+                <div className="flex justify-between items-start tablet:flex-col tablet:gap-[30px]">
                     {/* Logo Section */}
                     <div>
-                        <Image src={theme === 'dark' ? logoLight : logoDark} alt="logo" className="w-[185px] h-[35px] mb-[30px]" />
-                        <div className="text-sm text-[#8390A7] dark:text-[#8390A7]">
+                        <Image src={theme === 'dark' ? logoLight : logoDark} alt="logo" className="w-[185px] h-[35px] mb-[30px] tabletSm:w-[165px] tabletSm:h-[45px]" />
+                        <div className="text-sm text-[#8390A7] dark:text-[#8390A7] tabletSm:hidden">
                             <p>Nurax от RoboGPT</p>
                             <p>Ваш личный ИИ-сотрудник</p>
                         </div>
                     </div>
 
                     {/* Navigation Section */}
-                    <div className='flex gap-[160px]'>
+                    <div className='flex gap-[160px] tablet:flex-col tablet:gap-[30px]'>
                         <div>
                             <h3 className="text-[18px] font-bold text-[#121414] dark:text-white mb-[25px]">Nurax</h3>
                             <div className="flex flex-col gap-[15px]">
-                                <p><Link href="#" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Войти</Link></p>
-                                <p><Link href="#" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Регистрация</Link></p>
+                                <p><Link href="/auth/login" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Войти</Link></p>
+                                <p><Link href="/auth/register" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Регистрация</Link></p>
                             </div>
                         </div>
 
@@ -36,9 +36,9 @@ const Footer = () => {
                         <div>
                             <h3 className="text-[18px] font-bold text-[#121414] dark:text-white mb-[25px]">Юридическая информация</h3>
                             <div className="flex flex-col gap-[15px]">
-                                <p><Link href="#" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Политика конфиденциальности</Link></p>
-                                <p><Link href="#" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Условия использования</Link></p>
-                                <p><Link href="#" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Правила и положения</Link></p>
+                                <p><Link href="/legal/privacy-policy" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Политика конфиденциальности</Link></p>
+                                <p><Link href="/legal/user-agreement" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Условия использования</Link></p>
+                                <p><Link href="/legal/user-agreement" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Правила и положения</Link></p>
                             </div>
                         </div>
                     </div>
@@ -58,6 +58,10 @@ const Footer = () => {
                                 </svg>
                             </Link>
                         </div>
+                    </div>
+
+                    <div className="text-[13px] text-[#8390A7] dark:text-[#8390A7] hidden tabletSm:block">
+                        <p>Nurax от RoboGPT Ваш личный ИИ-сотрудник</p>
                     </div>
                 </div>
             </div>

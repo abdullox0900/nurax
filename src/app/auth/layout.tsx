@@ -10,7 +10,7 @@ export default function AuthLayout({
     const { theme } = useTheme()
 
     return (
-        <main className={`min-h-screen screen-linear-gradient ${theme === 'light' ? 'bg-custom-gradient' : 'bg-[#121414]'}`}>
+        <main className={`screen-linear-gradient ${theme === 'light' ? 'bg-custom-gradient' : 'bg-[#121414]'}`}>
             {children}
         </main>
     )

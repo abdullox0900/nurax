@@ -6,33 +6,54 @@ import ThemeToggle from '@/components/ThemeToggle/ThemeToggle'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Header({ bgColor }: { bgColor: string }) {
     const { theme } = useTheme()
     const isDarkMode = theme === 'dark'
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+    // Add/remove overflow-hidden class to html and body when menu opens/closes
+    useEffect(() => {
+        const html = document.documentElement
+        const body = document.body
+
+        if (mobileMenuOpen) {
+            html.classList.add('overflow-hidden')
+            body.classList.add('overflow-hidden')
+        } else {
+            html.classList.remove('overflow-hidden')
+            body.classList.remove('overflow-hidden')
+        }
+
+        return () => {
+            html.classList.remove('overflow-hidden')
+            body.classList.remove('overflow-hidden')
+        }
+    }, [mobileMenuOpen])
+
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen)
     }
 
     return (
-        <div className={`container mx-auto ${bgColor}`}>
-            <header className='flex justify-between items-center py-[65px] tabletMd:py-[40px] tabletSm:py-[20px]'>
-                <Image src={isDarkMode ? logoLight : logoDark} alt="logo" width={185} height={35} className='tabletSm:w-[127px] tabletSm:h-[24px]' />
+        <div className={`${bgColor}`}>
+            <header className='container mx-auto flex justify-between items-center py-[65px] tabletMd:py-[40px] tabletSm:py-[20px]'>
+                <Link href="/">
+                    <Image src={isDarkMode ? logoLight : logoDark} alt="logo" width={185} height={35} className='tabletSm:w-[127px] tabletSm:h-[24px]' />
+                </Link>
 
                 {/* Desktop Navigation */}
                 <nav className='flex laptopSm:hidden'>
                     <ul className='flex gap-[70px]'>
                         <li>
-                            <Link href="/" className='text-[15px] font-semibold text-gray-800 dark:text-gray-200'>Кейсы</Link>
+                            <a href="#cases" className='text-[15px] font-semibold text-gray-800 dark:text-gray-200 cursor-pointer hover:text-blue-500 transition-colors'>Кейсы</a>
                         </li>
                         <li>
-                            <Link href="/" className='text-[15px] font-semibold text-gray-800 dark:text-gray-200'>Отзывы</Link>
+                            <a href="#reviews" className='text-[15px] font-semibold text-gray-800 dark:text-gray-200 cursor-pointer hover:text-blue-500 transition-colors'>Отзывы</a>
                         </li>
                         <li>
-                            <Link href="/" className='text-[15px] font-semibold text-gray-800 dark:text-gray-200'>Тарифы</Link>
+                            <a href="#pricing" className='text-[15px] font-semibold text-gray-800 dark:text-gray-200 cursor-pointer hover:text-blue-500 transition-colors'>Тарифы</a>
                         </li>
                     </ul>
                 </nav>
@@ -47,7 +68,7 @@ export default function Header({ bgColor }: { bgColor: string }) {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="hidden laptopSm:flex items-center gap-2 ">
+                <div className="hidden laptopSm:flex items-center gap-2 z-10">
                     <ThemeToggle />
                     <button
                         className="w-[60px] h-[40px] flex items-center justify-center bg-white dark:bg-[#121414] rounded-[12px]"
@@ -72,7 +93,7 @@ export default function Header({ bgColor }: { bgColor: string }) {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-                <div className="fixed inset-0 z-50 bg-[#F9F9F9] dark:bg-[#121414] hidden laptopSm:block ">
+                <div className="fixed inset-0 z-[999999] bg-[#F9F9F9] dark:bg-[#121414] hidden laptopSm:block">
                     <div className='dark:bg-[#222429] border-b border-[rgba(131,144,167,0.2)]  dark:border-[rgba(131,144,167,0.2)]'>
                         <div className="flex justify-between items-center container mx-auto py-[95px] tabletMd:py-[40px] tabletSm:py-[20px] tabletSm:px-[20px]">
                             <Image src={isDarkMode ? logoLight : logoDark} alt="logo" width={185} height={35} className='tabletSm:w-[127px] tabletSm:h-[24px]' />
@@ -95,13 +116,13 @@ export default function Header({ bgColor }: { bgColor: string }) {
                     <nav className="px-4 mt-12 tabletSm:mt-[80px]">
                         <ul className="flex flex-col gap-[40px]">
                             <li>
-                                <Link href="/" className="text-[32px] font-bold text-black dark:text-white" onClick={toggleMobileMenu}>Кейсы</Link>
+                                <a href="#cases" className="text-[32px] font-bold text-black dark:text-white cursor-pointer hover:text-blue-500 transition-colors" onClick={toggleMobileMenu}>Кейсы</a>
                             </li>
                             <li>
-                                <Link href="/" className="text-[32px] font-bold text-black dark:text-white" onClick={toggleMobileMenu}>Отзывы</Link>
+                                <a href="#reviews" className="text-[32px] font-bold text-black dark:text-white cursor-pointer hover:text-blue-500 transition-colors" onClick={toggleMobileMenu}>Отзывы</a>
                             </li>
                             <li>
-                                <Link href="/" className="text-[32px] font-bold text-black dark:text-white" onClick={toggleMobileMenu}>Тарифы</Link>
+                                <a href="#pricing" className="text-[32px] font-bold text-black dark:text-white cursor-pointer hover:text-blue-500 transition-colors" onClick={toggleMobileMenu}>Тарифы</a>
                             </li>
                         </ul>
                     </nav>

@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer'
 import type { Metadata } from "next"
 import { ThemeProvider } from 'next-themes'
 import { Raleway } from "next/font/google"
@@ -31,7 +30,6 @@ export default function RootLayout({
           <div className="flex-1">
             {children}
           </div>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

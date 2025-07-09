@@ -23,18 +23,19 @@ const TestimonialCard = ({ id, name, position, avatar, quote }: TestimonialProps
     const { theme } = useTheme()
 
     return (
-        <div className="relative self-stretch w-full h-[340px] ">
-            {theme === 'dark' ? (
-                <svg width={420} height={340} viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M420 260C420 271.046 411.046 280 400 280H380C368.954 280 360 288.954 360 300V320C360 331.046 351.046 340 340 340H20C8.95432 340 0 331.046 0 320V20.0001C0 8.95443 8.95431 0.00012207 20 0.00012207H400C411.046 0.00012207 420 8.95443 420 20.0001V260Z" fill="#222429" />
-                </svg>
-            ) : (
-                <svg width={420} height={340} viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M420 260C420 271.046 411.046 280 400 280H380C368.954 280 360 288.954 360 300V320C360 331.046 351.046 340 340 340H20C8.95432 340 0 331.046 0 320V20.0001C0 8.95443 8.95431 0.00012207 20 0.00012207H400C411.046 0.00012207 420 8.95443 420 20.0001V260Z" fill="#F9F9F9" />
-                </svg>
-            )}
-
-            <div className="flex flex-col w-[340px] items-start gap-[15px] absolute top-10 left-10">
+        <div className="relative self-stretch w-full h-[340px] laptopMd:bg-[#F9F9F9] laptopMd:dark:bg-[#222429] laptopMd:rounded-[20px] laptopMd:p-[20px] laptopMd:pb-[35px] laptopMd:flex laptopMd:flex-col laptopMd:items-start laptopMd:justify-between">
+            <div className='flex laptopMd:hidden'>
+                {theme === 'dark' ? (
+                    <svg width={420} height={340} viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M420 260C420 271.046 411.046 280 400 280H380C368.954 280 360 288.954 360 300V320C360 331.046 351.046 340 340 340H20C8.95432 340 0 331.046 0 320V20.0001C0 8.95443 8.95431 0.00012207 20 0.00012207H400C411.046 0.00012207 420 8.95443 420 20.0001V260Z" fill="#222429" />
+                    </svg>
+                ) : (
+                    <svg width={420} height={340} viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M420 260C420 271.046 411.046 280 400 280H380C368.954 280 360 288.954 360 300V320C360 331.046 351.046 340 340 340H20C8.95432 340 0 331.046 0 320V20.0001C0 8.95443 8.95431 0.00012207 20 0.00012207H400C411.046 0.00012207 420 8.95443 420 20.0001V260Z" fill="#F9F9F9" />
+                    </svg>
+                )}
+            </div>
+            <div className="flex flex-col w-[340px] items-start gap-[15px] absolute top-10 left-10 laptopMd:w-full laptopMd:static">
                 {quote.map((paragraph, index) => (
                     <p
                         key={index}
@@ -45,7 +46,7 @@ const TestimonialCard = ({ id, name, position, avatar, quote }: TestimonialProps
                 ))}
             </div>
 
-            <div className="inline-flex items-center gap-[15px] absolute top-[252px] left-10">
+            <div className="inline-flex items-center gap-[15px] absolute top-[252px] left-10 laptopMd:static">
                 <div className="h-[46px] w-[46px] rounded-full overflow-hidden">
                     <Image
                         src={avatar}
@@ -67,7 +68,7 @@ const TestimonialCard = ({ id, name, position, avatar, quote }: TestimonialProps
                 </div>
             </div>
 
-            <div className="absolute w-[50px] h-[50px] top-[289px] left-[370px] bg-[#2d63f3] rounded-[15px] flex items-center justify-center p-0">
+            <div className="absolute w-[50px] h-[50px] top-[289px] left-[370px] bg-[#2d63f3] rounded-[15px] flex items-center justify-center p-0 laptopMd:hidden">
                 <span className="font-bold text-white text-[15px] text-center tracking-[0] leading-[20.2px]">
                     {id}
                 </span>
@@ -129,22 +130,23 @@ const Testimonials = () => {
     )
 
     return (
-        <section className="bg-white dark:bg-[#121414] flex flex-row justify-center w-full border-y border-[#F9F9FA] dark:border-[rgba(249,249,250,0.01)] testimonials-card">
-            <div className="container mx-auto overflow-hidden w-full h-[830px] relative">
-                <header className="flex flex-col w-[400px] items-start gap-[25px] absolute top-[171px]">
-                    <h1 className="relative self-stretch mt-[-1.00px] font-bold text-[#121414] dark:text-white text-[40px] tracking-[0] leading-[44.8px]">
+        <section id="reviews" className="max-w-[1440px] mx-auto px-4 bg-white dark:bg-[#121414] flex flex-row justify-center w-full border-y border-[#F9F9FA] dark:border-[rgba(249,249,250,0.01)] testimonials-card tabletSm:px-0 ">
+            <div className="overflow-hidden w-full h-[830px] relative laptopMd:h-auto laptopMd:overflow-visible">
+                <header className="flex flex-col w-[400px] items-start gap-[25px] absolute top-[171px] laptopMd:w-full laptopMd:static laptopMd:mb-[34px] tabletSm:top-[100px] tabletSm:gap-[15px]">
+                    <h1 className="relative self-stretch mt-[-1.00px] font-bold text-[#121414] dark:text-white text-[40px] tracking-[0] leading-[44.8px] laptopMd:text-center tabletSm:text-[25px] tabletSm:leading-[112%]">
                         Отзывы из разных
                         <br />
                         отраслей
                     </h1>
 
-                    <p className="relative self-stretch font-semibold text-[#121414] dark:text-white text-[15px] tracking-[0] leading-[20.2px]">
+                    <p className="relative self-stretch font-semibold text-[#121414] dark:text-white text-[15px] tracking-[0] leading-[20.2px] laptopMd:text-center">
                         Мы любим слышать наших пользователей, <br />
                         особенно тех, кто формирует свои отрасли
                     </p>
                 </header>
 
-                <div className="absolute w-[936px] h-[795px] top-20 left-[664px]">
+                {/* Desktop layout */}
+                <div className="absolute w-[860px] h-[795px] top-20 right-0 laptopMd:hidden">
                     <div className="flex flex-col w-[420px] items-start gap-[15px] absolute top-0 left-0">
                         {leftColumnTestimonials.map((testimonial) => (
                             <TestimonialCard
@@ -158,7 +160,7 @@ const Testimonials = () => {
                         ))}
                     </div>
 
-                    <div className="flex flex-col w-[420px] items-start gap-[15px] absolute top-[100px] left-[435px]">
+                    <div className="flex flex-col w-[420px] items-start gap-[15px] absolute top-[100px] right-0">
                         {rightColumnTestimonials.map((testimonial) => (
                             <TestimonialCard
                                 key={testimonial.id}
@@ -171,7 +173,28 @@ const Testimonials = () => {
                         ))}
                     </div>
 
-                    <div className="w-[936px] h-[170px] top-[580px] bg-[linear-gradient(0deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0)_100%)] absolute left-0  dark:bg-[linear-gradient(0deg,rgba(18,20,20,1)_0%,rgba(18,20,20,0)_100%)]" />
+                    <div className="w-[936px] h-[170px] top-[580px] bg-[linear-gradient(0deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0)_100%)] absolute left-0 dark:bg-[linear-gradient(0deg,rgba(18,20,20,1)_0%,rgba(18,20,20,0)_100%)]" />
+                </div>
+
+                {/* Mobile layout with horizontal scroll like category filter */}
+                <div className="hidden laptopMd:block w-full">
+                    <div className="overflow-x-auto w-full">
+                        <div className="flex gap-[15px] pl-[20px] min-w-max pb-4">
+                            {testimonials.map((testimonial) => (
+                                <div key={testimonial.id} className="w-[300px] flex-shrink-0">
+                                    <TestimonialCard
+                                        id={testimonial.id}
+                                        name={testimonial.name}
+                                        position={testimonial.position}
+                                        avatar={testimonial.avatar}
+                                        quote={testimonial.quote}
+                                    />
+                                </div>
+                            ))}
+                            {/* Add extra padding at the end for better scrolling experience */}
+                            <div className="w-[1px]"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

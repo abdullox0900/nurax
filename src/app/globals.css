@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 html {
-    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
+
 body {
-    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .screen-linear-gradient {

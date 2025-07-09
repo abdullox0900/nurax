@@ -14,7 +14,7 @@ export default function LegalLayout({
 }) {
     return (
         <>
-            <Header bgColor='bg-[rgba(18,20,20,0.3)]' />
+            <Header bgColor='bg-[#e7f0ff] dark:bg-[#222429] px-[20px]' />
             {children}
         </>
     )

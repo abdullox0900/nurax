@@ -13,3 +13,9 @@
     background-repeat: no-repeat;
     z-index: 1;
 }
+
+@media (max-width: 1250px) {
+    .testimonials-card::before {
+        display: none;
+    }
+}

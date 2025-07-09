@@ -1,4 +1,5 @@
 import CardSection from '@/components/CardSection'
+import Footer from '@/components/Footer'
 import PricingSection from '@/components/PricingSection'
 import StartSection from '@/components/StartSection'
 import Testimonials from '@/components/Testimonials'
@@ -10,10 +11,9 @@ export default function Home() {
       <Hero />
       <CardSection />
       <Testimonials />
-      <div className="container mx-auto px-4">
-        <PricingSection />
-        <StartSection />
-      </div>
+      <PricingSection />
+      <StartSection />
+      <Footer />
     </>
   )
 }

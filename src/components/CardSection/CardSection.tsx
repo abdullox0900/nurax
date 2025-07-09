@@ -32,7 +32,7 @@ const CardSection = () => {
     }
 
     return (
-        <div className="w-full pt-[120px] pb-[80px] card-section-bg">
+        <div id="cases" className="w-full pt-[120px] pb-[80px] card-section-bg">
             <h2 className="text-[40px] leading-[112%] font-bold mb-[25px] text-center dark:text-white tabletSm:text-[30px] tabletSm:mb-[15px]">
                 Изучите примеры использования
                 <br /> из <span className="text-blue-500">нашей официальной коллекции</span>

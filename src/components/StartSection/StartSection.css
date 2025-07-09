@@ -13,5 +13,6 @@
     height: 100%;
     background-image: url('../../assets/start-section-bg.svg');
     background-size: cover;
+    background-position-x: center;
     z-index: -1;
 }

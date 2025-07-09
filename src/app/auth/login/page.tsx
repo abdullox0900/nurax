@@ -73,7 +73,7 @@ export default function Login() {
     )
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center relative z-10">
+        <div className="flex flex-col items-center justify-center relative z-10 pt-[120px] pb-[70px] tabletSm:pt-[110px]">
             <div className="absolute top-[40px] left-[80px] tablet:top-[30px] tablet:left-[20px] tabletSm:top-[20px] tabletSm:left-[10px]">
                 <Link href="/" className="flex items-center text-[15px] font-semibold text-[#121414] dark:text-white tabletSm:text-[12px]">
                     <span className='flex items-center justify-center w-[40px] h-[40px] text-[#121414] bg-white dark:bg-[#222429] dark:text-white rounded-full mr-[15px] tabletSm:w-[35px] tabletSm:h-[35px]'>
