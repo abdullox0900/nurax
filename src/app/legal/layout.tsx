@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import Header from '@/components/Header/Header'
 import type { Metadata } from 'next'
 import React from 'react'
@@ -16,6 +17,7 @@ export default function LegalLayout({
         <>
             <Header bgColor='bg-[#e7f0ff] dark:bg-[#222429] px-[20px]' />
             {children}
+            <Footer />
         </>
     )
 } 

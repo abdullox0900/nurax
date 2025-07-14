@@ -37,7 +37,6 @@ const Footer = () => {
                             <h3 className="text-[18px] font-bold text-[#121414] dark:text-white mb-[25px]">Юридическая информация</h3>
                             <div className="flex flex-col gap-[15px]">
                                 <p><Link href="/legal/privacy-policy" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Политика конфиденциальности</Link></p>
-                                <p><Link href="/legal/user-agreement" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Условия использования</Link></p>
                                 <p><Link href="/legal/user-agreement" className="text-[15px] font-medium text-[#121414] dark:text-[#F9F9FA] hover:text-gray-900 dark:hover:text-white">Правила и положения</Link></p>
                             </div>
                         </div>

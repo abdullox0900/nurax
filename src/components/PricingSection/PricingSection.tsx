@@ -17,7 +17,7 @@ const PricingSection = () => {
         {
             id: 'basic',
             name: 'Базовый',
-            price: '1 500 ₽',
+            price: '1500 ₽',
             features: [
                 '1 час',
                 'Личные проекты',
@@ -27,7 +27,7 @@ const PricingSection = () => {
         {
             id: 'pro',
             name: 'Профи',
-            price: '2 500 ₽',
+            price: '2500 ₽',
             features: [
                 '2 часа',
                 'Частные проекты',
@@ -37,7 +37,7 @@ const PricingSection = () => {
         {
             id: 'premium',
             name: 'Обычный',
-            price: '5 500 ₽',
+            price: '5500 ₽',
             features: [
                 'Соответствует вашим потребностям'
             ]
@@ -47,8 +47,8 @@ const PricingSection = () => {
     return (
         <div id="pricing" className="w-full pb-[120px] pt-[80px] max-w-[1440px] mx-auto px-4">
             <div className="text-center mb-[50px]">
-                <h2 className="max-w-[750px] leading-[112%] mx-auto text-[40px] font-bold mb-[25px] tabletSm:text-[25px] tabletSm:leading-[112%]">
-                    Выберите подходящий <span className="text-blue-500">план для ваших нужд</span>
+                <h2 className="max-w-[730px] leading-[112%] mx-auto text-[40px] font-bold mb-[25px] tabletSm:text-[25px] tabletSm:leading-[112%]">
+                    Выберите подходящий <span className="text-[#2D63F3]">план <br /> для ваших нужд</span>
                 </h2>
                 <p className="text-[15px] leading-[135%] text-[#121414] max-w-[500px] mx-auto dark:text-white">
                     Начните с нашего бесплатного плана или перейдите на премиум-план,
@@ -60,7 +60,7 @@ const PricingSection = () => {
                 {pricingPlans.map((plan, index) => (
                     <div key={plan.id} className={
                         index === 2 ?
-                            "border border-blue-500 rounded-[20px] p-[40px] bg-[#2D63F3] text-white overflow-hidden flex flex-col h-[410px] pricing-section tabletSm:h-[360px] tabletSm:px-[20px] tabletSm:py-[25px]" :
+                            "border border-[#2D63F3] rounded-[20px] p-[40px] bg-[#2D63F3] text-white overflow-hidden flex flex-col h-[410px] pricing-section tabletSm:h-[360px] tabletSm:px-[20px] tabletSm:py-[25px]" :
                             index === 3 ?
                                 "border border-[rgba(131,144,167,0.2)] dark:border-[rgba(249,249,250,0.08)] rounded-[20px] p-[40px] dark:bg-[#222429] flex flex-col laptopMd:h-[410px] tabletSm:h-[360px] tabletSm:px-[20px] tabletSm:py-[25px]" :
                                 "border border-[rgba(131,144,167,0.2)] dark:border-[rgba(249,249,250,0.08)] rounded-[20px] p-[40px] bg-[#F9F9F9] dark:bg-[#222429] flex flex-col laptopMd:h-[410px] tabletSm:h-[360px] tabletSm:px-[20px] tabletSm:py-[25px]"

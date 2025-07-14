@@ -107,10 +107,10 @@ export default function LegalNavigation() {
 
     // Desktop view
     return (
-        <div className="flex gap-[30px] max-w-[465px] mx-auto border-b border-[rgba(131,144,167,0.2)]">
+        <div className="flex gap-[30px] max-w-[490px] mx-auto border-b border-[rgba(131,144,167,0.2)]">
             <Link
                 href="/legal/user-agreement"
-                className={`text-[15px] font-semibold pb-[15px] ${pathname === '/legal/user-agreement'
+                className={`text-[14px] font-semibold pb-[15px] ${pathname === '/legal/user-agreement'
                     ? 'text-[#2D63F3] border-b-2 border-[#2D63F3]'
                     : 'text-[#121414] dark:text-white'
                     }`}
