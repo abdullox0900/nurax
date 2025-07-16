@@ -50,7 +50,7 @@ const CardSection = () => {
                                 key={category}
                                 onClick={() => {
                                     setActiveCategory(category)
-                                    setVisibleCards(5) // Reset visible cards when changing category
+                                    setVisibleCards(10) // Reset visible cards when changing category
                                 }}
                                 className={`px-4 py-2 rounded-[11px] text-[15px] font-semibold leading-[135%] transition-all whitespace-nowrap ${activeCategory === category
                                     ? 'bg-black text-white border border-transparent dark:bg-[#fff] dark:text-[#121414]'

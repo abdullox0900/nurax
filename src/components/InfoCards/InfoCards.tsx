@@ -35,7 +35,7 @@ const InfoCards = () => {
                             </p>
                         </div>
                         {index < cards.length - 1 && (
-                            <div className="flex items-center justify-center mr-[35px] ml-[5px] w-[40px] h-[40px] bg-white rounded-full dark:bg-[#121414] laptop:hidden">
+                            <div className="flex items-center justify-center mr-[20px] ml-[5px] w-[40px] h-[40px] bg-white rounded-full dark:bg-[#121414] laptop:hidden">
                                 <MdArrowForward className='' />
                             </div>
                         )}

@@ -85,7 +85,7 @@ export default function Register() {
     )
 
     return (
-        <div className="flex flex-col items-center justify-center relative z-10 pt-[120px] pb-[70px] tabletSm:pt-[110px]w">
+        <div className="flex flex-col items-center justify-center relative z-10 pt-[120px] pb-[70px] tabletSm:pt-[110px]">
             <div className="absolute top-[40px] left-[80px] tablet:top-[30px] tablet:left-[20px] tabletSm:top-[20px] tabletSm:left-[10px]">
                 <Link href="/" className="flex items-center text-[15px] font-semibold text-[#121414] dark:text-white tabletSm:text-[12px]">
                     <span className='flex items-center justify-center w-[40px] h-[40px] text-[#121414] bg-white dark:bg-[#222429] dark:text-white rounded-full mr-[15px] tabletSm:w-[35px] tabletSm:h-[35px]'>
@@ -162,13 +162,13 @@ export default function Register() {
                         <div className="flex flex-col gap-[6px] mt-[25px] text-center tabletSm:mt-[15px]">
                             <button
                                 type="submit"
-                                className="w-full bg-[#2D63F3] text-white font-medium py-[13px] rounded-[11px] transition duration-200 text-[15px] md:text-base"
+                                className="w-full bg-[#2D63F3] font-bold text-white py-[13px] rounded-[11px] transition duration-200 text-[15px] md:text-base"
                             >
                                 Войти
                             </button>
                             <button
                                 onClick={() => router.push('/auth/login')}
-                                className="w-full border border-[#121414] dark:border-white text-[#121414] dark:text-white font-medium py-[13px] rounded-[11px] transition duration-200 text-[15px] leading-[151%]"
+                                className="w-full border border-[#121414] font-semibold dark:border-white text-[#121414] dark:text-white py-[13px] rounded-[11px] transition duration-200 text-[15px] leading-[151%]"
                             >
                                 Уже есть учетная запись?
                             </button>

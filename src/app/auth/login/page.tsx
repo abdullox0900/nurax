@@ -138,13 +138,13 @@ export default function Login() {
                         <div className="flex flex-col gap-[6px] mt-[25px] text-center tabletSm:mt-[15px]">
                             <button
                                 type="submit"
-                                className="w-full bg-[#2D63F3] text-white font-medium py-[13px] rounded-[11px] transition duration-200 text-[15px] md:text-base"
+                                className="w-full bg-[#2D63F3] font-semibold text-white py-[13px] rounded-[11px] transition duration-200 text-[15px] md:text-base"
                             >
                                 Войти
                             </button>
                             <button
                                 onClick={() => router.push('/auth/register')}
-                                className="w-full border border-[#121414] dark:border-white text-[#121414] dark:text-white font-medium py-[13px] rounded-[11px] transition duration-200 text-[15px] leading-[151%]"
+                                className="w-full border border-[#121414] font-semibold dark:border-white text-[#121414] dark:text-white py-[13px] rounded-[11px] transition duration-200 text-[15px] leading-[151%]"
                             >
                                 Уже есть учетная запись?
                             </button>

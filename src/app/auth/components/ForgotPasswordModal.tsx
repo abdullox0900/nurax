@@ -116,7 +116,7 @@ export default function ForgotPasswordModal({ onClose }: ForgotPasswordModalProp
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full bg-[#2D63F3] text-white font-medium py-[13px] rounded-[11px] transition duration-200 disabled:opacity-70 text-[15px] leading-[151%]"
+                                className="w-full bg-[#2D63F3] text-white font-bold py-[13px] rounded-[11px] transition duration-200 disabled:opacity-70 text-[15px] leading-[151%]"
                             >
                                 {isSubmitting ? 'Отправка...' : 'Отправить ссылку сброса'}
                             </button>
